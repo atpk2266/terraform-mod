@@ -1,5 +1,5 @@
 /* GLOBAL */
-project_id = "roposocdn-sandbox-7980"
+project_id = "my-project-957-311307"
 region     = "asia-southeast1"
 
 /* Service Account Configuration*/

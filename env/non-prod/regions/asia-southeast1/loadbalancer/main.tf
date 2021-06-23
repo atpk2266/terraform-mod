@@ -17,12 +17,12 @@
 
 locals {
   health_check = {
-    check_interval_sec  = 10
-    timeout_sec         = 5
-    healthy_threshold   = 2
-    unhealthy_threshold = 3
+    check_interval_sec  = var.check_interval_sec
+    timeout_sec         = var.check_timeout_sec
+    healthy_threshold   = var.healthy_threshold
+    unhealthy_threshold = var.unhealthy_threshold
     request_path        = "/"
-    port                = 80
+    port                = var.portnum
     host                = null
     logging             = false
   }

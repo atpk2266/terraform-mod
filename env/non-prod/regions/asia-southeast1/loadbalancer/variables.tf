@@ -46,3 +46,24 @@ variable "name" {
   description = "Name of resources"
   type        = string
 }
+
+variable "check_timeout_sec" {
+  description = ""
+  
+}
+variable "check_interval_sec" {
+  description = ""
+  
+}
+variable "healthy_threshold" {
+  description = ""
+  
+}
+variable "unhealthy_threshold" {
+  description = ""
+  
+}
+variable "portnum" {
+  description = ""
+  
+}

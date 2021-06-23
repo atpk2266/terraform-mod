@@ -23,6 +23,7 @@ variable "project_id" {
   }
 }
 
+
 variable "region" {
   description = "The region of cloud resource"
   type        = string

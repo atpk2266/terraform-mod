@@ -20,3 +20,27 @@ variable "network_name" {
     error_message = "VPC name is invalid."
   }
 }
+
+variable "countnum" {
+  description = ""
+
+}
+
+variable "min_ports_per_vm" {
+  description = ""
+}
+
+variable "icmp_idle_timeout_sec" {
+  description = ""
+}
+variable "tcp_established_idle_timeout_sec" {
+  description = ""
+}
+variable "tcp_transitory_idle_timeout_sec" {
+  description = ""
+}
+variable "udp_idle_timeout_sec" {
+  description = ""
+}
+
+

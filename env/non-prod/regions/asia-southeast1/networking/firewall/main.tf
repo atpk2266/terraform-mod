@@ -15,20 +15,20 @@
  */
 
 
-/* Firewall Rule for SSH and RDP Access */
-module "allow_ssh_rdp" {
+/* Firewall Rule for iap Access */
+module "google_iap_access_fw_rule" {
   source       = "../../../../../../modules/networking/firewall"
   network_name = var.network_name
   project_id   = var.project_id
   rules = [{
-    name                    = "allow-ssh-rdp-frw"
-    description             = "Allow SSH and RDP Access"
-    direction               = "INGRESS"
-    ranges                  = ["0.0.0.0/0"]
-    priority                = 1000
+    name                    = "allow-iap-access-fw"
+    description             = "Allow iap Access"
+    ranges            = ["35.235.240.0/20"]
+    priority                  = "1000"
+    direction                 = "INGRESS"
     source_tags             = null
     source_service_accounts = null
-    target_tags             = ["ssh", "rdp"]
+    target_tags = ["allow-iap-access"]
     target_service_accounts = null
     allow = [{
       protocol = "tcp"

@@ -15,8 +15,8 @@
  */
 
 
-output "ssh_rule" {
-  value       = module.allow_ssh_rdp.firewall_rules
+output "allow-iap-access-fw" {
+  value       = module.google_iap_access_fw_rule
   description = "The name of the firewall rule being created"
 }
 

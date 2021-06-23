@@ -92,56 +92,56 @@ variable "node_pool_01" {
 }
 
 
-variable "auto_repair" {
+variable "auto_repair_01" {
   type    = bool
   default = true
 }
 
-variable "auto_upgrade" {
+variable "auto_upgrade_01" {
   type    = bool
   default = true
 }
 
-variable "min_count" {
+variable "min_count_01" {
   description = "Minimum number of nodes in the NodePool."
   default     = 1
 }
 
-variable "max_count" {
+variable "max_count_01" {
   description = "Maximum number of nodes in the NodePool."
   default     = 3
 }
 
-variable "machine_type" {
+variable "machine_type_01" {
   description = "The name of a Google Compute Engine machine type"
   default     = "n1-standard-2"
   validation {
-    condition     = can(regex("^[a-z]([a-z0-9-])+([a-z0-9]+)$", var.machine_type))
+    condition     = can(regex("^[a-z]([a-z0-9-])+([a-z0-9]+)$", var.machine_type_01))
     error_message = "Machine type is invalid."
   }
 }
 
 
-variable "image_type" {
+variable "image_type_01" {
   description = "The image type to use for this node."
   default     = "COS"
   validation {
-    condition     = var.image_type == "COS"
+    condition     = var.image_type_01 == "COS"
     error_message = "COS image is recommended."
   }
 }
 
-variable "disk_type" {
+variable "disk_type_01" {
   description = "Type of the disk attached to each node (e.g. 'pd-standard' or 'pd-ssd')"
   default     = "pd-standard"
 }
 
-variable "disk_size_gb" {
+variable "disk_size_gb_01" {
   description = "Size of the disk attached to each node, specified in GB. The smallest allowed disk size is 10GB"
   default     = "100"
 }
 
-variable "preemptible" {
+variable "preemptible_01" {
   type        = bool
   description = "A boolean that represents whether or not the underlying node VMs are preemptible"
   default     = false
@@ -160,4 +160,52 @@ variable "node_pool_02" {
     condition     = can(regex("^[a-z]([a-z0-9-])+([a-z0-9]+)$", var.node_pool_02))
     error_message = "Node pool name is invalid."
   }
+}
+
+variable "machine_type_02" {
+  description = "The name of a Google Compute Engine machine type"
+  default     = "n1-standard-2"
+  validation {
+    condition     = can(regex("^[a-z]([a-z0-9-])+([a-z0-9]+)$", var.machine_type_02))
+    error_message = "Machine type is invalid."
+  }
+}
+
+
+variable "min_count_02" {
+  description = "Minimum number of nodes in the NodePool."
+  default     = 1
+}
+
+variable "max_count_02" {
+  description = "Maximum number of nodes in the NodePool."
+  default     = 3
+}
+variable "image_type_02" {
+  description = "The image type to use for this node."
+  default     = "COS"
+  validation {
+    condition     = var.image_type_02 == "COS"
+    error_message = "COS image is recommended."
+  }
+}
+
+variable "disk_type_02" {
+  description = "Type of the disk attached to each node (e.g. 'pd-standard' or 'pd-ssd')"
+  default     = "pd-standard"
+}
+
+variable "disk_size_gb_02" {
+  description = "Size of the disk attached to each node, specified in GB. The smallest allowed disk size is 10GB"
+  default     = "100"
+}
+
+variable "auto_repair_02" {
+  type    = bool
+  default = true
+}
+
+variable "auto_upgrade_02" {
+  type    = bool
+  default = true
 }
